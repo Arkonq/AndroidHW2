@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">StepEducation182</string>
 
-    <string name="main_activity_welcome_message">Здравствуйте! Это наше приложение</string>
+    <string name="main_activity_state_default">Just a State Text</string>
+    <string name="main_activity_state_correct">It is so sad =(</string>
+    <string name="main_activity_state_incorrect">Incorrect Login or Password</string>
+    <string name="main_activity_hide_button">Hide fields</string>
+    <string name="main_activity_check_button">Check login and password</string>
 </resources>

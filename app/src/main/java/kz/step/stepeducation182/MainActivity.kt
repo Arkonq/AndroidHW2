@@ -1,45 +1,52 @@
 package kz.step.stepeducation182
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    var showWelcome: Button? = null
-    var welcomeMessage: TextView? = null
+    var stateText: TextView? = null
 
-    val peopleCount = 0
-    var studentsList: List<String>? = null
+    var login: EditText? = null
+    var password: EditText? = null
+
+    var hideFields: Button? = null
+    var checkFields: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initializeViews()
-        initializeLiseners()
+        initializeListeners()
     }
 
-    fun initializeViews(){
-        showWelcome = findViewById(R.id.button_main_activity_press)
-        welcomeMessage = findViewById(R.id.textview_main_activity_text)
+    private fun initializeViews(){
+        stateText = findViewById(R.id.text_view_main_activity_state_text)
+        hideFields = findViewById(R.id.button_main_activity_hide)
+        checkFields = findViewById(R.id.button_main_activity_check)
+        login = findViewById(R.id.edit_text_main_activity_login)
+        password = findViewById(R.id.edit_text_main_activity_password)
     }
 
-    fun initializeLiseners(){
-        showWelcome?.setOnClickListener {
-            welcomeMessage?.setText("I am pressed!")
+    private fun initializeListeners(){
+        checkFields?.setOnClickListener {
+            if(login?.text.toString() == "icarus" && password?.text.toString() == "fallen"){
+                stateText?.text = getString(R.string.main_activity_state_correct)
+            } else {
+                stateText?.text = getString(R.string.main_activity_state_incorrect)
+            }
         }
-    }
-
-    fun initiateCountPersons(){
-
-    }
-
-    fun initiateRequestPersons(){
-
-    }
-
-    companion object{
-        const val KEY_PERSONS_NAME = "KEY_PERSONS_NAME"
+        hideFields?.setOnClickListener {
+            stateText?.visibility = View.GONE;
+            hideFields?.visibility = View.GONE;
+            checkFields?.visibility = View.GONE;
+            login?.visibility = View.GONE;
+            password?.visibility = View.GONE;
+        }
     }
 }

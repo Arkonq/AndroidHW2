@@ -6,22 +6,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
     <TextView
-        android:id="@+id/textview_main_activity_text"
+        android:id="@+id/text_view_main_activity_state_text"
         android:textColor="#ff0000"
         android:textSize="14sp"
-        android:text="@string/main_activity_welcome_message"
+        android:text="@string/main_activity_state_default"
         android:layout_margin="16dp"
         android:layout_width="match_parent"
-        android:layout_height="48dp"/>
+        android:layout_height="32dp"/>
+    <EditText
+        android:id="@+id/edit_text_main_activity_login"
+        android:layout_marginStart="@dimen/project_margin_default_16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/edit_text_main_activity_password"
+        android:layout_marginStart="@dimen/project_margin_default_16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/button_main_activity_press"
+        android:id="@+id/button_main_activity_hide"
         android:textColor="#ff0000"
-        android:text="Press me!"
+        android:text="@string/main_activity_hide_button"
         android:layout_marginStart="@dimen/project_margin_default_16dp"
         android:layout_marginEnd="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/button_main_activity_check"
+        android:textColor="#ff0000"
+        android:text="@string/main_activity_check_button"
+        android:layout_marginStart="@dimen/project_margin_default_16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>
